@@ -1,0 +1,104 @@
+<View>
+  <Header value="Audio Transcription Correction"/>
+  <Audio name="audio" value="$audio"/>
+  
+  <View style="margin-top: 20px;">
+    <Header value="AI Generated Title"/>
+    <TextArea name="ai_generated_title" toName="audio" 
+              placeholder="Enter AI-generated title for this voice note..." 
+              rows="1" editable="true"/>
+  </View>
+  
+  <View style="margin-top: 20px;">
+    <Header value="Original AI Transcript (Uncorrected)"/>
+    <TextArea name="original_transcript" toName="audio" 
+              placeholder="Paste the original AI transcript here..." 
+              rows="4" editable="true"
+              style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; font-style: italic;"/>
+  </View>
+  
+  <View style="margin-top: 20px;">
+    <Header value="Corrected Transcript"/>
+    <TextArea name="corrected_transcript" toName="audio" 
+              placeholder="Type the corrected transcription here..." 
+              rows="6" editable="true"/>
+  </View>
+  
+  <View style="margin-top: 20px;">
+    <Header value="Audio Challenges Present"/>
+    <Choices name="audio_challenges" toName="audio" choice="multiple" showInline="true">
+      <Choice value="Traffic Noise" hint="Road traffic sounds"/>
+      <Choice value="Audible Conversations" hint="Other people talking"/>
+      <Choice value="Outdoor Noise (General)" hint="Street/urban sounds"/>
+      <Choice value="Background Music" hint="Music playing"/>
+    </Choices>
+  </View>
+  
+  <View style="margin-top: 20px;">
+    <Header value="Non-Speaker Content"/>
+    <Choices name="Non Speaker Content" toName="audio" choice="single" showInline="true">
+      <Choice value="Yes" hint="Speaker addresses someone else not intended for transcription"/>
+    </Choices>
+  </View>
+  
+  <View style="margin-top: 20px;">
+    <Header value="Audible Conversation Languages"/>
+    <Choices name="conversation_languages" toName="audio" choice="multiple" showInline="true">
+      <Choice value="English"/>
+      <Choice value="Hebrew"/>
+      <Choice value="Arabic"/>
+      <Choice value="Russian"/>
+      <Choice value="French"/>
+      <Choice value="Amharic"/>
+      <Choice value="Unknown"/>
+      <Choice value="Other"/>
+    </Choices>
+  </View>
+  
+  <View style="margin-top: 20px;">
+    <Header value="Recording Location"/>
+    <TextArea name="recording_place" toName="audio" 
+              placeholder="Jerusalem, Israel" 
+              rows="1" editable="true"/>
+  </View>
+  
+  <View style="margin-top: 20px;">
+    <Header value="Microphone Used"/>
+    <Choices name="microphone_type" toName="audio" choice="single" showInline="true">
+      <Choice value="Internal Phone Microphone" hint="Built-in phone mic"/>
+      <Choice value="Bluetooth Device (Unspecified)" hint="Bluetooth device (unspecified)"/>
+      <Choice value="Bluetooth Headset (Unspecified)" hint="Bluetooth headset (unspecified)"/>
+      <Choice value="Poly 5200" hint="Poly 5200 device"/>
+    </Choices>
+  </View>
+  
+  <View style="margin-top: 20px;">
+    <Header value="Recording Environment"/>
+    <Choices name="recording_environment" toName="audio" choice="single" showInline="true">
+      <Choice value="Indoor"/>
+      <Choice value="Outdoor"/>
+    </Choices>
+  </View>
+  
+  <View style="margin-top: 20px;">
+    <Header value="Audio Quality"/>
+    <Rating name="audio_quality" toName="audio" 
+            maxRating="5" icon="star" size="medium"/>
+  </View>
+  
+  <View style="margin-top: 20px;">
+    <Header value="Voice Note Content Type"/>
+    <Choices name="content_type" toName="audio" choice="multiple" showInline="true">
+      <Choice value="To-do List" hint="Task or action items"/>
+      <Choice value="Grocery List" hint="Shopping or purchase items"/>
+      <Choice value="Tasks" hint="Work or project tasks"/>
+      <Choice value="Email Draft" hint="Email content or ideas"/>
+      <Choice value="Project Outline" hint="Project planning or structure"/>
+      <Choice value="Meeting Notes" hint="Meeting summaries or notes"/>
+      <Choice value="Ideas" hint="Creative or business ideas"/>
+      <Choice value="Reminders" hint="Personal reminders"/>
+      <Choice value="Other" hint="Other content type"/>
+    </Choices>
+  </View>
+  
+</View>
